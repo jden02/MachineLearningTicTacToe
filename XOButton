@@ -1,0 +1,31 @@
+import javax.swing.*;
+import java.awt.event.*;
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
+public class XOButton extends JButton implements ActionListener {
+    ImageIcon X, O;
+    int[] dis = new int[9];
+
+    public XOButton() {
+        X = new ImageIcon(this.getClass().getResource("X.png"));
+        O = new ImageIcon(this.getClass().getResource("O.png"));
+        this.addActionListener(this);
+    }
+
+    public static int count = 0;
+    public void actionPerformed(ActionEvent a) {
+        count++;
+        Coordinate james = new Coordinate();
+        if (count % 2 != 0) {
+            setIcon(X);
+            james.intake(getName(),"X");
+        } else if (count % 2 == 0) {
+            setIcon(O);
+            james.intake(getName(),"O");
+        }
+
+        setEnabled(false);
+        //return dis;
+    }
+}
