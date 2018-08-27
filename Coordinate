@@ -1,0 +1,33 @@
+import java.util.Arrays;
+
+public class Coordinate {
+    private static String[][] win;
+    int winner = 0;
+
+   static{
+       win = new String[][] {{"0","1","2"},{"0","4","8"},{"0","3","6"},{"1","4","7"},{"2","5","8"},{"2","4","6"},{"3","4","5"},{"6","7","8"}};
+   }
+
+   public void intake (String pos, String val){
+       for(int i = 0;i < win.length;i++){
+           for( int j = 0;j < 3;j++){
+               if(win[i][j].equals(pos)){
+                   win[i][j] = val;
+               }
+           }
+       }
+       System.out.println(Arrays.deepToString(win));
+       winCheck();
+   }
+   public void winCheck (){
+       for(int i = 0;i < win.length;i++) {
+           if (win[i][0].equals("X")&& win[i][1].equals("X") && win[i][2].equals("X")) {
+               System.out.println("PLAYER 1 WINS!");
+
+           }else if(win[i][0].equals("O")&& win[i][1].equals("O") && win[i][2].equals("O")){
+               System.out.println("PLAYER 2 WINS!");
+
+           }
+       }
+   }
+}
