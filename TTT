@@ -1,0 +1,29 @@
+import javax.swing.*;
+import java.awt.GridLayout;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
+public class TTT extends JFrame{
+    JPanel p=new JPanel();
+    XOButton buttons[]=new XOButton[9];
+    public TTT() {
+        super("TicTacToe");
+    }
+    public void start (){
+        setSize(400,400);
+        setResizable(false);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        p.setLayout(new GridLayout(3,3));
+        for(int i=0;i<9;i++) {
+            buttons[i] = new XOButton();
+            buttons[i].setName(i+"");
+            p.add(buttons[i]);
+            System.out.println(buttons[i].getName());
+        }
+        add(p);
+        setVisible(true);
+    }
+    public void endGame(int w){
+
+    }
+}
