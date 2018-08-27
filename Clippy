@@ -1,0 +1,6 @@
+public class Clippy {
+    public static void main (String[] args){
+        TTT AITTT = new TTT();
+        AITTT.start();
+    }
+}
